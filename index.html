@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <title>Azriell</title>
+</head>
+<!-- Html -->
+<body style="background-color: black;">
+    <div class="wavy">
+        <span style="--i:1;"><h1>A</h1></span>
+        <span style="--i:2;"><h1>Z</h1></span>
+        <span style="--i:3;"><h1>R</h1></span>
+        <span style="--i:4;"><h1>I</h1></span>
+        <span style="--i:5;"><h1>E</h1></span>
+        <span style="--i:6;"><h1>L</h1></span>
+        <span style="--i:7;"><h1>L</h1></span>
+    </div>
+    <div class="icon">
+        <div class="icon"></div>
+        <a class="tombol" href="https://www.facebook.com/azriell.nvl.1/"><i class="fab fa-facebook-f"></i></a>
+        <a class="tombol" href="https://twitter.com/aazrrl"><i class="fab fa-twitter"></i></a>
+        <a class="tombol" href="https://www.instagram.com/azrieelsidiqq/?hl=id"><i class="fab fa-instagram"></i></a>
+        <a class="tombol" href="https://www.tiktok.com/@azrielsidiqq"><i class="fab fa-tiktok"></i></a>
+    </div>
+    <!-- Html -->
+
+    <!-- JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <div id="MyClockDisplay" class="clock" onload="showTime()"></div>
+    <script>
+        function showTime(){
+    var date = new Date();
+    var h = date.getHours(); // 0 - 23
+    var m = date.getMinutes(); // 0 - 59
+    var s = date.getSeconds(); // 0 - 59
+    var session = "";
+    
+    if(h == 0){
+        h = 23;
+    }
+    
+    if(h > 23){
+        h = h - 23;
+    }
+    
+    h = (h < 10) ? "0" + h : h;
+    m = (m < 10) ? "0" + m : m;
+    s = (s < 10) ? "0" + s : s;
+    
+    var time = h + ":" + m + ":" + s + " " + session;
+    document.getElementById("MyClockDisplay").innerText = time;
+    document.getElementById("MyClockDisplay").textContent = time;
+    
+    setTimeout(showTime, 1000);
+    
+}
+showTime();
+    </script>
+    <!-- JS -->
+
+    <!-- CSS -->
+    <style>
+    body{
+        margin: 0;
+        padding: 0;
+    }
+    
+    .icon{
+        position:absolute;
+        top: 78%;
+        transform: translateY(-50%);
+        width: 100%;
+        text-align: center;
+    }
+    .tombol{
+        display: inline-block;
+        width: 78px;
+        height: 78px;
+        margin: 0px;
+        box-sizing: 0 5px 15px -5px #00000070;
+        overflow: hidden;
+        position: relative;
+        color: #fff;
+    
+    }
+    
+    .tombol i{
+        transition: 0.2s linear;
+        font-size: 40px;
+        line-height: 90px;
+    }
+    
+    .tombol:hover i{
+        transform: scale(1.3);
+        color: #f1f1f1;
+    }
+    
+    .tombol::before{
+        content: "";
+        position: absolute;
+        width: 120px;
+        height: 120px;
+        left: -110px;
+        top: 90%;
+        transform: rotate(45deg);    
+}
+    
+    .tombol:hover:before{
+        left: -10%;
+        top: -10%;
+        animation: aaa 0.7s 1;
+    }
+    
+    @keyframes aaa{
+        0%{
+        left: -110%;
+        top: 90%; 
+        }
+        50%{
+        left: 10%;
+        top: -30%;
+        }
+        100%{
+        left: -10%;
+        top: -10%;
+        }
+    }
+    *
+    {
+        margin: 0;
+        padding: 0;
+        font-family: 'Courier New', Courier, monospace;
+    }
+    body
+    {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+    .wavy
+    {
+        position: relative;
+        height: 90px;
+        -webkit-box-reflect: below -12px linear-gradient(transparent, rgba (0,0,0,0.2));
+    
+    }
+    .wavy span{
+        position: relative;
+        display: inline-block;
+        color: white;
+        font-size: 2em;
+        text-transform: uppercase;
+        animation: animate 1s ease-in-out infinite;
+        animation-delay: calc(0.1s * var(--i))
+    }
+    @keyframes animate
+    {
+        0%
+        {
+        transform: translateY(0px);
+        }
+        20%
+        {
+        transform: translateY(-20px);
+        }
+        40%,100%
+        {
+        transform: translateY(0px);
+        }
+    }
+    body {
+        background: black;
+    }
+    
+    .clock {
+        position: absolute;
+        top: 20%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        color: #fff;
+        font-size: 40px;
+        font-family: 'Courier New', Courier, monospace;
+        letter-spacing: 5px;
+    }
+    </style>
+
+    <!-- CSS -->
+</body>
+</html>
